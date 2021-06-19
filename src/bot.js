@@ -113,6 +113,10 @@ client.on("message", (message) => {
                     })
                 })
         }
+
+        else {
+            message.channel.send(`Invalid Command. Type **$help** to see usage.`);
+        }
     }
 });
 
