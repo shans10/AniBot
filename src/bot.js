@@ -1,5 +1,6 @@
 const { get } = require("request-promise-native")
 const { Client, MessageEmbed } = require("discord.js");
+const findAnime = require("./findAnime");
 
 const client = new Client();
 
@@ -111,6 +112,15 @@ client.on("message", (message) => {
                         msg.delete();
                         message.channel.send(`No Manga by the name **"${args.join(" ")}"** exists. Please check the spelling or try another!!!`);
                     })
+                })
+        }
+
+        else if (CMD_NAME === "find" && message.attachments.first().attachment) {
+            message.reply("Finding your Anime.....")
+                .then(async msg => {
+                    const result = await findAnime({ imageUrl: message.attachments.first().attachment });
+                    message.reply(result);
+                    msg.delete();
                 })
         }
 
