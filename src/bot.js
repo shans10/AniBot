@@ -22,9 +22,11 @@ client.on("message", (message) => {
             const usage = new MessageEmbed()
                 .setTitle(`AniBot Help`)
                 .setColor("RANDOM")
+                .setURL("https://github.com/shans10/AniBot")
                 .setDescription(`**Usage:**
                     *Anime:* $anime ANIME_NAME_HERE
-                    *Manga:* $manga MANGA_NAME_HERE`)
+                    *Manga:* $manga MANGA_NAME_HERE
+                    *Find :* Upload an image and type $find in comment section`)
                 .setTimestamp();
 
             message.channel.send(usage);
