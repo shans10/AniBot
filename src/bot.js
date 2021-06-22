@@ -117,7 +117,7 @@ client.on("message", (message) => {
                 })
         }
 
-        else if (CMD_NAME === "find" && message.attachments.first().attachment) {
+        else if (CMD_NAME === "find" && message.attachments.size) {
             message.reply("Finding your Anime.....")
                 .then(async msg => {
                     const result = await findAnime({ imageUrl: message.attachments.first().attachment });
